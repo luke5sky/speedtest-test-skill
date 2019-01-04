@@ -31,13 +31,13 @@ class speedtestSkill(MycroftSkill):
     def handle_speedtest__intent(self, message):
         try:
  #           self.speak_dialog('running')
-            servers = []
+          #  servers = []
             speed = speedtest.Speedtest()
-            speed.get_servers(servers)
+         #   speed.get_servers(servers)
             speed.get_best_server()
             speed.download()
             speed.upload(pre_allocate=False)
-            speed.results.share()
+         #   speed.results.share()
             result = speed.results.dict()
             downspeed = ('%.2f' % float((result["download"])/1000000))
             upspeed = ('%.2f' % float((result["upload"])/1000000))
